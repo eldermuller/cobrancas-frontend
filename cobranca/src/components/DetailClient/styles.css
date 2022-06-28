@@ -1,0 +1,113 @@
+.detail-client--container {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 8.2rem);
+    max-height: 100%;
+    margin-left: 7.1rem;
+    border-radius: 30px;
+
+    row-gap: 2.4rem;
+    margin-top: 2.4rem;
+    position: relative;
+}
+
+.detail-client--header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 12.5rem;
+}
+
+.detail-client--header button {
+    width: 25.2rem;
+}
+
+.detail-client--title img {
+    margin-right: 1.6rem;
+    width: 2rem;
+}
+
+.detail-client--data,
+.detail-client--billings {
+    display: flex;
+    width: calc(100% - 10rem);
+    flex-direction: column;
+    padding: 3rem 2.5rem 2.4rem 2.4rem;
+    border-radius: 3rem;
+    background-color: #FFFFFF;
+    position: relative;
+}
+
+
+
+.detail-client--data h2,
+.detail-client--billings h2 {
+    margin-bottom: 2.4rem;
+    color: var(--cinza-200);
+}
+
+
+
+.client-data--box-1 {
+    display: grid;
+    grid-template-columns: 25% 15% 60%;
+    margin-bottom: 5.55rem;
+}
+
+.client-data--box-2 {
+    display: grid;
+    grid-template-columns: 25% 15% 20% 20% 15% 5%
+}
+
+
+
+.client-data--h4 {
+    margin-bottom: 0.8rem;
+    color: var(--cinza-200);
+}
+
+.client-data--span {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-size: 1.8rem;
+    color: var(--cinza-200);
+}
+
+.edit-client-btn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--verde-medio);
+
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-size: 1.8rem;
+
+    top: 2.53rem;
+    right: 2.65rem;
+    padding: 0.4rem 6rem;
+    border-radius: 1rem;
+    border: 1px solid var(--cinza-600);
+    background-color: var(--cinza-800);
+
+    cursor: pointer;
+    transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+}
+
+.edit-client-btn:hover {
+    transform: scale(1.1);
+}
+
+.edit-client-btn-icon {
+    stroke: var(--verde-medio);
+    width: 29px;
+}
+
+.detail-client--pink-btn {
+    position: absolute;
+    top: 3rem;
+    right: 2.25rem;
+    width: 25.2rem;
+}

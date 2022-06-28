@@ -1,0 +1,58 @@
+.container-modal-detail-billing {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-family: 'Nunito', sans-serif;
+    color: var(--cinza-200);
+    font-size: 16px;
+}
+
+.container-modal-detail-billing h5 {
+
+    font-weight: 700;
+}
+
+.container-modal-detail-billing span {
+    font-weight: 400;
+}
+
+
+
+.content-modal-detail-header {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2.3rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.close-detail-icon {
+    position: absolute;
+    right: -2rem;
+    bottom: 3rem;
+    cursor: pointer;
+}
+
+.content-modal-detail-name-description {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-modal-detail-name-description h5 {
+    padding: 1rem 0 1rem 0;
+}
+
+.content-modal-detail-payment-values {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+.content-modal-detail-payment-values h5 {
+    padding: 2.4rem 0 1rem 0;
+}
+
+.close-detail-icon:hover {
+    transform: scale(1.1);
+}

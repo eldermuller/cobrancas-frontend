@@ -1,0 +1,67 @@
+.sidebar {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    width: 11rem;
+}
+
+.sidebar-container,
+.selection-bar {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8.15rem;
+}
+
+.sidebar-container {
+    width: 10.8rem;
+    background-color: var(--cinza-700);
+    padding-top: 5.4rem;
+}
+
+.sidebar-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1.35rem;
+
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    cursor: pointer;
+}
+
+.sidebar-option:hover {
+    transform: scale(1.1);
+}
+
+
+.sidebar-icons {
+    width: 2.6rem;
+    fill: none;
+}
+
+.unselected {}
+
+
+.sidebar-tags {
+    font-family: 'Nunito';
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.selection-bar {
+    width: 0.2rem;
+    position: relative;
+}
+
+.selected-option {
+    width: 100%;
+    background-color: var(--rosa-medio);
+    height: 6.5rem;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    position: absolute;
+}

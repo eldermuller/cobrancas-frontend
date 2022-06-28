@@ -1,0 +1,122 @@
+.billings-board {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 18.3rem);
+    height: 100%;
+    margin-left: 7rem;
+    border-radius: 30px;
+
+    background-color: white;
+}
+
+.billings-list--label {
+    height: 6.6rem;
+
+}
+
+.billings-list--label,
+.billings-list--row {
+    width: 100%;
+
+    display: grid;
+    justify-content: flex-start;
+    grid-template-columns: 16% 13% 14% 13% 13% 26% 5%;
+    padding: 0 5rem 0 4rem;
+    border-bottom: 1px solid #EFF0f6;
+}
+
+
+.billings-list--column {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+
+
+.billings-list--label .billings-list--column {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: var(--cinza-200);
+}
+
+.billings-list--c1 {
+    cursor: pointer;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.billings-list--c2-data {
+    padding-left: 3rem;
+}
+
+.billings-list--c6 {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.billings-list--c7 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.billings-list--label .billings-list--column {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: var(--cinza-200);
+}
+
+.billings-list--row .billings-list--column {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: #6e6e85;
+}
+
+.billings-list--row {
+    grid-auto-rows: 5vh;
+    flex-direction: column;
+}
+
+.billings-list--row span:first-child {
+    cursor: pointer;
+
+}
+
+.billings-list--row span:first-child:hover {
+    transform: scale(1.1);
+}
+
+.billings-status {
+    width: 9.9rem;
+}
+
+.edit-billing-btn {
+    width: 2.2rem;
+    margin-right: 2rem;
+}
+
+.delete-billing-btn {
+    width: 2.5rem;
+}
+
+.billing-status,
+.edit-billing-btn,
+.delete-billing-btn,
+.set-billing-order-btn {
+    cursor: pointer;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.billing-status:hover,
+.edit-billing-btn:hover,
+.delete-billing-btn:hover,
+.set-billing-order-btn:hover {
+    transform: scale(1.1);
+}

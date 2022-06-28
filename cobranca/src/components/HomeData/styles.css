@@ -1,0 +1,41 @@
+.homedata {
+    width: 100%;
+    height: calc(100% - 8.2rem);
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+    padding-left: 4.8rem;
+    padding-right: 11.4rem;
+}
+
+.homedata-line-1,
+.homedata-line-2,
+.homedata-line-3 {
+    display: flex;
+    justify-content: space-between;
+    gap: 3.2rem;
+    width: 100%;
+}
+
+.homedata-line-1 {
+    margin-top: 1.9rem;
+}
+
+.homedata-line-2 {
+    margin-top: 2.4rem;
+    margin-bottom: 3.2rem;
+    height: calc(50% - 1.8rem);
+}
+
+.homedata-line-3 {
+    margin-bottom: 3.7rem;
+    height: calc(50% - 1.8rem);
+}
+
+@media (max-width: 1367px) {
+    .homedata {
+        padding: 0;
+    }
+}

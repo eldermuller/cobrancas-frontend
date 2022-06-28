@@ -1,0 +1,240 @@
+.container-add-senha {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: #F8F8F9;
+    position: relative;
+
+}
+
+.signup--back-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 40px;
+
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.signup--back-btn:hover {
+    transform: scale(1.1);
+}
+
+.container-add-senha h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    padding-bottom: 32px;
+
+}
+
+.container-add-senha form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 14px;
+    position: relative;
+
+}
+
+
+
+.container-add-senha label {
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    padding-bottom: 6px;
+}
+
+.container-add-senha input {
+    background: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    height: 44px;
+    width: 368px;
+    padding: 10px 0px 10px 14px;
+    border: 1px solid #D0D5DD;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    border-radius: 8px;
+}
+
+.content-password {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 3.6rem;
+}
+
+.content-repeat {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 6.2rem;
+}
+
+.content-repeat img,
+.content-password img {
+    position: absolute;
+    top: 36px;
+    right: 1.6rem;
+    width: 20px;
+    height: 20px;
+}
+
+.content-login span a {
+    color: #DA0175;
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+
+
+}
+
+.content-entrar {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (max-width: 1000px) {
+    .container-add-senha h1 {
+        margin-top: 2rem;
+        padding-bottom: 1rem;
+    }
+
+    .content-password,
+    .content-repeat {
+        margin-bottom: 1.8rem;
+    }
+
+    .content-login,
+    .content-login span {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 880px) and (min-height: 500px) {
+    .container-add-senha {
+        padding: 0;
+        height: calc(100vh - 143px);
+    }
+
+    .container-add-senha form {
+        margin-bottom: 8rem;
+        height: 40%;
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 500px) and (min-height: 500px) {
+    .container-add-senha {
+        height: calc(100vh - 200px)
+    }
+
+    .container-add-senha form {
+        height: 70%;
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 389px) {
+    .container-add-senha {
+        height: 100%;
+        width: 100%;
+    }
+
+    .container-add-senha h1 {
+        font-size: 1.8rem;
+    }
+
+    .content-password,
+    .content-repeat {
+        width: 100%;
+        margin-left: 4rem;
+        margin-right: 4rem;
+    }
+
+    .content-password input,
+    .content-repeat input {
+        width: 100%;
+    }
+
+    .content-login,
+    .content-login span {
+        font-size: 1.2rem;
+    }
+
+    .content-entrar {
+        margin-top: 3rem;
+    }
+}
+
+@media (max-height: 500px) {
+    .container-add-senha {
+        height: 100%;
+    }
+
+    .container-add-senha form {
+        margin-top: 0;
+    }
+
+
+    .signup--back-btn {
+        top: 0.5rem;
+    }
+
+    .container-add-senha h1 {
+        font-size: 1.8rem;
+        margin-top: 0.5rem;
+        padding-bottom: 0;
+    }
+
+    .content-password,
+    .content-repeat {
+        width: 100%;
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+
+    .content-password label,
+    .content-repeat label {
+        font-size: 1.2rem;
+    }
+
+    .content-password input,
+    .content-repeat input {
+        width: 100%;
+        height: 3.8rem;
+    }
+
+    .content-password img,
+    .content-repeat img {
+        transform: scale(0.7);
+        top: 3.1rem;
+        right: 5rem
+    }
+}
+
+@media (max-height: 400px) and (max-width: 700px) {
+    .container-add-senha {
+        margin-bottom: 4rem;
+    }
+
+    .content-password,
+    .content-repeat {
+        margin-bottom: 1.8rem;
+    }
+
+    .content-login,
+    .content-login span {
+        font-size: 1.2rem;
+    }
+}

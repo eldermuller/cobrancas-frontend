@@ -1,0 +1,27 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(145, 154, 150, 0.3);
+    backdrop-filter: blur(4px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-box {
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 30px;
+    min-width: 20%;
+    min-height: 30%;
+    position: relative;
+    padding: 4rem 5rem 4rem 6.2rem;
+
+}
+
+.close-btn:hover {
+    transform: scale(1.3);
+}

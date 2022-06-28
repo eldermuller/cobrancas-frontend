@@ -1,0 +1,63 @@
+.client-bills--grid {
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.client-bills--label {
+    display: grid;
+    grid-template-columns: 18% 18% 18% 16% 30%;
+
+    padding-bottom: 1.6rem;
+}
+
+.client-bills--column {
+    display: flex;
+    align-items: center;
+
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: var(--cinza-200);
+}
+
+.client-bills--datas {
+    display: grid;
+    grid-template-columns: 18% 18% 18% 16% 20% 10%;
+
+    align-items: center;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    border-top: 1px solid #eff0f6;
+}
+
+
+.client-bills--data-id,
+.client-bills--data-date {
+    padding-left: 2.4rem;
+}
+
+.client-bills--data,
+.client-bills--data-6 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: #6e6e85;
+    padding-right: 2.7rem;
+}
+
+.client-bills--data-6 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.client-bills--data-7 {
+    display: flex;
+}
+
+.client-bills--delete-icon {
+    margin-left: 3.2rem;
+    cursor: pointer;
+}

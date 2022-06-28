@@ -1,0 +1,56 @@
+.container-tab {
+    display: flex;
+    gap: 10px;
+    height: 6px;
+    position: absolute;
+    align-self: center;
+
+    bottom: 64px;
+}
+
+.green,
+.grey {
+    width: 82px;
+    border-radius: 20px;
+}
+
+.green {
+    border: 2px solid #0E8750;
+    background-color: var(--verde-medio);
+
+}
+
+.grey {
+    border: 2px solid #DEDEE9;
+    background-color: #DEDEE9;
+}
+
+@media (max-width:1000px) {
+    .container-tab {
+        bottom: 3rem
+    }
+}
+
+@media (max-width:880px) and (min-height: 500px) {
+    .container-tab {
+        bottom: 11rem;
+    }
+}
+
+@media (max-width: 389px) {
+    .container-tab {
+        bottom: 4rem;
+    }
+}
+
+@media (max-height: 500px) {
+    .container-tab {
+        bottom: 5rem
+    }
+}
+
+@media (max-height: 400px) and (max-width: 700px) {
+    .container-tab {
+        bottom: 1rem
+    }
+}

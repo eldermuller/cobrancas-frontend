@@ -1,0 +1,79 @@
+.userbox {
+    height: 4.8rem;
+    display: flex;
+    align-items: center;
+
+    position: relative
+}
+
+.name-initials-userbox {
+    background-color: var(--cinza-600);
+    height: 4.8rem;
+    width: 4.8rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 2.2rem;
+    color: var(--verde-medio);
+}
+
+.name-userbox {
+    margin-left: 1.6rem;
+    margin-right: 1.3rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: var(--verde-medio);
+}
+
+.down-arrow-userbox {
+    width: 1.4rem;
+    fill: none;
+    stroke: var(--verde-medio);
+
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    cursor: pointer;
+}
+
+.down-arrow-userbox:hover {
+    transform: scale(1.1);
+}
+
+.option-user-box {
+    position: absolute;
+    right: -6.7rem;
+    top: 4.5rem;
+
+    width: 9.2rem;
+    height: 5.1rem;
+    background-color: white;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem
+}
+
+.polygon {
+    position: absolute;
+    top: -0.8rem;
+    left: 0.8rem;
+    filter: drop-shadow(0 -8px 8px rgba(0, 0, 0, 0.5));
+}
+
+.edit-icon,
+.exit-icon {
+    cursor: pointer;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.edit-icon:hover,
+.exit-icon:hover {
+    transform: scale(1.1);
+}

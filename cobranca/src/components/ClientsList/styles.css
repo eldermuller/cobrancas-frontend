@@ -1,0 +1,77 @@
+.clients-list {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 18.3rem);
+    height: 100%;
+    margin-left: 7rem;
+    border-radius: 30px;
+
+    background-color: white;
+}
+
+.clients-list--label {
+    height: 6.6rem;
+
+}
+
+.clients-list--label,
+.clients-list--row {
+    width: 100%;
+
+    display: grid;
+    justify-content: flex-start;
+    grid-template-columns: repeat(4, 19%) 16% 8%;
+    padding: 0 2.4rem 0 4rem;
+    border-bottom: 1px solid #EFF0f6;
+}
+
+.clients-list--column {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+
+
+.clients-list--label .clients-list--column {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: var(--cinza-200);
+}
+
+.clients-list--row .clients-list--column {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: #6e6e85;
+}
+
+.clients-list--row {
+    grid-auto-rows: 5vh;
+    flex-direction: column;
+}
+
+.client-status {
+    width: 9.9rem;
+}
+
+.add-billing-btn {
+    width: 3.5rem;
+}
+
+.client-status,
+.add-billing-btn,
+.set-client-order-btn,
+.client-name-click {
+    cursor: pointer;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.client-status:hover,
+.add-billing-btn:hover,
+.set-client-order-btn:hover,
+.client-name-click:hover {
+    transform: scale(1.1);
+}

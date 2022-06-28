@@ -1,0 +1,426 @@
+.general-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    cursor: pointer;
+
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.modal-label {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: #344054;
+
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-input,
+.modal-input-description {
+    padding: 1rem 1.4rem;
+    border: 1px solid #D0D5DD;
+    box-shadow: 0rem 0.1rem 0.2rem rgba(16, 24, 40, 0.05);
+    border-radius: 8px;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+}
+
+.modal-input {
+    height: 4.4rem;
+    font-size: 1.6rem;
+}
+
+.modal-input-description {
+    height: 8.8rem;
+    max-width: 100%;
+    font-size: 1.8rem;
+}
+
+.modal-input::placeholder {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: #667085
+}
+
+.modal-input:focus {
+    outline: none;
+}
+
+.pink-btn {
+    height: 3.3rem;
+    padding: 0.4rem 4rem;
+    background-color: var(--rosa-medio);
+    border: none;
+    border-radius: 10px;
+
+    color: #F8F8F9;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.signup-pink-btn {
+    background: #DA0175;
+    display: flex;
+    flex-wrap: nowrap;
+    color: white;
+    min-width: 160px;
+    height: 33px;
+    border-radius: 10px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 4px 40px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    outline: none;
+}
+
+.close-feedback,
+.filter-btn,
+.search-icon {
+    cursor: pointer;
+    transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.close-feedback:hover,
+.filter-btn:hover,
+.search-icon:hover {
+    transform: scale(1.1);
+}
+
+
+.pink-btn:hover,
+.signup-pink-btn:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+
+.error-message {
+    display: flex;
+    font-size: 1.4rem;
+    min-width: 20%;
+    height: 5rem;
+    border-radius: 10px;
+}
+
+.tiny-error-message {
+    display: none;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.error-message,
+.tiny-error-message {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-erro);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    color: var(--letra-erro-modal);
+    padding: 4px 40px;
+}
+
+
+.modal-warning-message,
+.warning-message {
+    position: absolute;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--letra-erro)
+}
+
+.modal-warning-message {
+    bottom: -1.9rem;
+    right: 0;
+}
+
+.warning-message {
+    bottom: -1.8rem;
+    left: 0.3rem;
+}
+
+.title-1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+}
+
+.title-2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+.title-3-semibold {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.title-3-bold {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.title-4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.title-100 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+}
+
+
+.content-tab {
+    position: absolute;
+    top: 730px;
+}
+
+.positive-feedback,
+.negative-feedback {
+    position: fixed;
+    bottom: 6.6rem;
+    right: 11.2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 2.8rem 0 2.4rem;
+    border-radius: 10px;
+
+    min-width: 33rem;
+    height: 5.4rem;
+
+    z-index: 1;
+}
+
+.positive-feedback {
+    background-color: #c3d4fe;
+}
+
+.negative-feedback {
+    background-color: #f2d6d0;
+}
+
+.positive-feedback-text {
+    color: #243f80;
+}
+
+.negative-feedback-text {
+    color: #ae1100;
+}
+
+.inner-tiny-modal-container {
+    display: flex;
+    align-items: center;
+}
+
+
+.positive-feedback-text,
+.negative-feedback-text {
+    margin-left: 1.2rem;
+    margin-right: 4.35rem;
+
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+
+}
+
+.search-input {
+    width: 31.8rem;
+    height: 3.9rem;
+
+    border: none;
+    border-radius: 1rem;
+    color: var(--cinza-200);
+    padding: 0.7rem 0.8rem;
+
+    box-shadow: 3px 3px 4px rgba(218, 1, 117, 0.05);
+}
+
+.search-input:focus {
+    outline: 1px solid var(--rosa-medio);
+    caret-color: var(--rosa-medio);
+}
+
+.search-icon {
+    position: absolute;
+    right: 1.2rem;
+
+}
+
+.id-middle-column {
+    margin-left: 3rem;
+}
+
+.edit-billing-btn {
+    width: 2.2rem;
+    margin-right: 2rem;
+}
+
+.delete-billing-btn {
+    width: 2.5rem;
+}
+
+.edit-billing-btn,
+.delete-billing-btn {
+    cursor: pointer;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.edit-billing-btn:hover,
+.delete-billing-btn:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 920px) {
+    .warning-message {
+        bottom: -1.8rem;
+        left: 0.3rem;
+    }
+}
+
+@media (max-width: 920px) and (max-height: 1100px) {
+    .tiny-error-message {
+        margin-top: -6rem
+    }
+}
+
+@media (max-height: 1100px) and (min-height: 850px) {
+    .error-message {
+        display: none;
+    }
+
+    .tiny-error-message {
+        display: flex;
+        transform: scale(1.6);
+    }
+}
+
+@media (max-height: 850px) and (max-width: 920px) {
+    .tiny-error-message {
+        display: none;
+    }
+
+    .error-message {
+        display: flex;
+        transform: scale(0.8);
+
+        margin-top: -6rem;
+        margin-right: -2.5rem;
+    }
+}
+
+@media (max-width: 600px) and (min-height: 750px) {
+    .error-message {
+        display: none;
+    }
+
+    .tiny-error-message {
+        display: flex;
+        transform: scale(1.6);
+    }
+
+    .warning-message {
+        font-size: 1.1rem;
+        left: 0.4rem;
+    }
+}
+
+
+@media (max-width: 600px) and (max-height: 750px) {
+    .error-message {
+        display: none;
+    }
+
+    .tiny-error-message {
+        display: flex;
+        transform: scale(1.6);
+    }
+}
+
+@media (max-height: 500px) and (max-width: 760px) {
+    .error-message {
+        margin-right: -4.5rem;
+        padding: 0rem 2rem;
+        height: 4rem;
+    }
+
+    .warning-message {
+        font-size: 1.2rem;
+        margin-left: 0.3rem;
+    }
+}
+
+@media (max-height: 300px) and (max-width: 680px) {
+    .error-message {
+        margin-right: -6.5rem;
+        margin-top: -6rem;
+        padding: 0rem 2rem;
+    }
+
+    .warning-message {
+        font-size: 1.2rem;
+        margin-left: 0.3rem;
+    }
+}
+
+@media (max-width: 389px) {
+    .warning-message {
+        font-size: 1.2rem;
+    }
+
+    .tiny-error-message {
+        transform: scale(1.2);
+    }
+}
+
+@media (max-width: 300px) {
+    .warning-message {
+        font-size: 1rem;
+        margin-left: 0.3rem;
+    }
+
+    .tiny-error-message {
+        transform: scale(1.2);
+    }
+
+    .signup-pink-btn {
+        transform: scale(0.8);
+    }
+}

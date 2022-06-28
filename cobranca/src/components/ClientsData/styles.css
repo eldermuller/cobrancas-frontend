@@ -1,0 +1,46 @@
+.clients-data {
+    width: 100%;
+    height: calc(100% - 8.2rem);
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+    padding-right: 11.4rem;
+    padding-bottom: 4.5rem;
+
+    position: relative;
+}
+
+.clients-header {
+    width: 100%;
+    height: 9.4rem;
+    display: flex;
+    padding: 3.1rem 11.3rem 3.1rem 7rem;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.clients-header--left,
+.clients-header--right {
+    display: flex;
+    align-items: center;
+
+}
+
+.clients-header--left {
+    gap: 2.2rem;
+}
+
+.clients-header--right {
+    gap: 1.6rem;
+    position: relative;
+}
+
+.client-header--tag {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 2.6rem;
+    color: var(--cinza-200);
+}

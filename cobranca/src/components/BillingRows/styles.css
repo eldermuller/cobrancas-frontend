@@ -1,0 +1,86 @@
+.billing-table-label {
+    height: 6.6rem;
+}
+
+.billing-table-label,
+.billing-row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 10fr 7fr 8fr;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0rem 0 4rem;
+
+    border-bottom: 1px solid #eff0f6;
+
+}
+
+.billing-column {
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.billing-table-label .billing-column {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: var(--cinza-200);
+}
+
+.billing-row {
+    grid-auto-rows: 4.6vh;
+}
+
+.billing-row .billing-column {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: #6e6e85;
+}
+
+.billing-last-column {
+    justify-content: flex-end;
+}
+
+.billing-footer {
+    height: 5.8rem;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.billing-footer-list-btn {
+    border: none;
+    background-color: transparent;
+
+    cursor: pointer;
+    text-decoration: underline;
+
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-size: 1.8rem;
+    color: var(--rosa-medio);
+    transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+}
+
+.billing-footer-list-btn:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 1367px) {
+    .billing-row {
+        grid-template-columns: 8fr 3fr 7fr;
+    }
+
+    /* 
+    .billing-column {
+        word-wrap: break-word;
+        word-break: break-all;
+    } */
+}

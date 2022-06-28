@@ -1,0 +1,282 @@
+.container-login {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 75%;
+    background-color: #F8F8F9;
+    padding: 1rem 1.4rem;
+
+    position: relative;
+}
+
+.container-login form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    position: relative;
+
+}
+
+.content-login-email,
+.content-login-password {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.content-login-email {
+    margin-bottom: 4.6rem;
+}
+
+
+.container-login h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    padding-bottom: 32px;
+}
+
+.content-login-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2px;
+}
+
+.content-login-label span {
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #DA0175;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+.content-login-password img {
+    position: absolute;
+    top: 40px;
+    right: 1.6rem;
+    width: 20px;
+    height: 20px;
+}
+
+
+
+.container-login label {
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    padding-bottom: 6px;
+}
+
+.container-login input {
+    background: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    height: 44px;
+    width: 36.8rem;
+    padding: 10px 0px 10px 14px;
+    border: 1px solid #D0D5DD;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    border-radius: 8px;
+    align-self: center;
+}
+
+.content-login-login,
+.content-login-login span {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.content-login-login {
+    color: var(--cinza-200);
+}
+
+.content-login-login span {
+    color: var(--rosa-medio);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.content-login-enter {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 46px;
+}
+
+@media (max-width: 920px) {
+
+    .container-login {
+        width: 100%;
+    }
+
+    .content-login-email,
+    .content-login-password {
+        width: 80%;
+    }
+
+    .content-login-email input,
+    .content-login-password input {
+        width: 100%;
+    }
+
+    .content-login-login {
+        margin-top: 1rem;
+    }
+
+    .content-login-login,
+    .content-login-login span {
+        font-size: 1.4rem;
+    }
+
+}
+
+@media (max-height: 1100px) and (max-width: 920px) {
+    .container-login h1 {
+        margin-top: 4rem;
+        padding-bottom: 1rem;
+    }
+}
+
+@media (max-height: 850px) and (max-width: 920px) {
+    .content-login-email {
+        margin-bottom: 3.4rem;
+    }
+
+    .content-login-enter {
+        margin-top: 3.4rem;
+    }
+}
+
+@media (max-width: 600px) and (min-height: 750px) {
+    .container-login {
+        padding: 1rem 0rem;
+    }
+
+    .container-login input {
+        font-size: 12px;
+        height: 40px;
+        padding: 10px 0px 10px 10px;
+    }
+
+    .content-login-email,
+    .content-login-password {
+        width: 90%;
+    }
+
+    .content-login-password img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .content-login-label span {
+        font-size: 12px;
+        margin-top: 0.3rem;
+    }
+}
+
+@media (max-height: 500px) and (max-width: 760px) {
+    .container-login h1 {
+        font-size: 2rem;
+    }
+
+    .content-login-email label,
+    .content-login-password label {
+        font-size: 1.2rem;
+    }
+
+    .content-login-email input,
+    .content-login-password input {
+        font-size: 12px;
+        font-weight: 400;
+        height: 38px;
+    }
+
+    .content-login-label span,
+    .content-login-login,
+    .content-login-login span {
+        font-size: 1.1rem;
+    }
+
+    .signup-pink-btn {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-height: 300px) and (max-width: 680px) {
+
+    .container-login h1 {
+        font-size: 2rem;
+        margin-top: 7rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .content-login-password img {
+        width: 1.6rem;
+        top: 3.3rem
+    }
+}
+
+@media (max-width: 389px) {
+    .container-login h1 {
+        font-size: 2rem;
+    }
+
+    .content-login-password img {
+        width: 1.5rem;
+    }
+
+    .content-login-label span,
+    .content-login-login,
+    .content-login-login span {
+        font-size: 1.2rem;
+    }
+
+    .content-login-label span {
+        margin-top: 0.3rem;
+    }
+}
+
+
+
+@media (max-width: 300px) {
+    .container-login h1 {
+        font-size: 1.6rem;
+    }
+
+    .container-login input {
+        font-size: 12px;
+        height: 36px;
+    }
+
+    .content-login-email,
+    .content-login-password {
+        width: 94%;
+    }
+
+    .content-login-email label,
+    .content-login-password label {
+        font-size: 1.1rem;
+    }
+
+    .content-login-password img {
+        width: 1.3rem;
+        top: 3.2rem
+    }
+
+    .content-login-label span,
+    .content-login-login,
+    .content-login-login span {
+        font-size: 1.1rem;
+    }
+
+}

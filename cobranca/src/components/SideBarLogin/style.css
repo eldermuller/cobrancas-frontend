@@ -1,0 +1,30 @@
+.container-side-bar {
+    display: flex;
+    min-height: 100vh;
+    width: 30%;
+
+    position: relative;
+    background-image: url('../../assets/side-bar-login.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.content-side-bar-text {
+    display: flex;
+    width: 100vw;
+    margin: 163px 47px 0 47px;
+
+    color: #034A2A;
+    padding: 15px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+@media (max-width: 920px) {
+    .container-side-bar {
+        display: none;
+    }
+}

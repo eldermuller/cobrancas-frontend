@@ -1,0 +1,44 @@
+.not-found-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.not-found-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.not-found-img-small {
+    width: 12.8rem;
+    align-self: flex-end;
+}
+
+.not-found-img-big {
+    width: 55.4rem;
+    height: 43rem;
+}
+
+.not-found-msg-1,
+.not-found-msg-2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.not-found-msg-1 {
+    margin-top: 5.2rem;
+    margin-bottom: 1.6rem;
+
+    font-size: 2.8rem;
+
+    color: #f08889
+}
+
+.not-found-msg-2 {
+    font-size: 2.4rem;
+    color: var(--cinza-400);
+}

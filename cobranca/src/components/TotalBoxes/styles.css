@@ -1,0 +1,49 @@
+.total-paid,
+.total-expired,
+.total-future {
+    display: flex;
+    align-items: center;
+    height: 11.1rem;
+
+    border-radius: 3.0rem;
+    gap: 6rem;
+
+    width: 32%;
+}
+
+.total-paid {
+    background-color: #eef6f6;
+    justify-content: center;
+}
+
+.total-expired {
+    background-color: #ffefef;
+    justify-content: center;
+}
+
+.total-future {
+    background-color: #fcf6dc;
+    justify-content: center;
+}
+
+.total-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.total-info-tag,
+.total-info-numbers {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--cinza-200);
+    margin-bottom: 1.1rem;
+}
+
+.total-info-tag {
+    font-size: 1.8rem;
+}
+
+.total-info-numbers {
+    font-size: 2.4rem;
+}

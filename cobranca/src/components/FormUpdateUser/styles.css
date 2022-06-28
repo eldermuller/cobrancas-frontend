@@ -1,0 +1,41 @@
+.update-user-form {
+    row-gap: 2.8rem;
+}
+
+.form-title {
+    margin-bottom: 1.2rem;
+}
+
+.update-user-input-large,
+.update-user-input-line {
+    width: 48.7rem;
+}
+
+.update-user-input-line {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.update-user-small {
+    width: 23rem;
+}
+
+.password-eye {
+    position: absolute;
+    right: 5%;
+    top: 51%;
+    cursor: pointer;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.password-eye:hover {
+    transform: scale(1.1);
+}
+
+.update-user-submit-btn {
+    width: 16rem;
+
+    margin-top: 2rem;
+}

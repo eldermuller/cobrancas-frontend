@@ -1,0 +1,32 @@
+.dashboard-full-page {
+    display: flex;
+    flex-direction: row;
+
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+.dashboard-page {
+    width: 100%;
+    padding-left: 3.2rem;
+    padding-right: 3.2rem;
+    padding-top: 3rem;
+
+    background-color: var(--cinza-800);
+}
+
+.dashboard-header {
+    height: 8.2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 11rem;
+    padding-left: 5rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--verde-claro);
+}
+
+.dashboard-title {
+    display: flex;
+}

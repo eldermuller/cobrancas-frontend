@@ -1,0 +1,41 @@
+.container-sucess-billing {
+    display: flex;
+    width: 100%;
+
+    position: relative;
+}
+
+.content-sucess-billing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30rem;
+    height: 4.4rem;
+    background-color: #C3D4FE;
+    border-radius: 10px;
+    position: absolute;
+    top: 45rem;
+    left: 45rem;
+}
+
+.content-sucess-billing img {
+    width: 2.2rem;
+    height: 2.2rem;
+
+}
+
+.content-sucess-billing img:last-child {
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+.content-sucess-billing img:last-child:hover {
+    transform: scale(1.1);
+}
+
+.content-sucess-billing h1 {
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+}
