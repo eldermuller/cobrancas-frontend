@@ -20,6 +20,20 @@ export default function Dashboard() {
         fontFamily: '', fontSize: '', fontWeight: 0, color: ''
     })
 
+    switch (document.readyState) {
+        case 'loading':
+            console.log('loading');
+            break;
+        case 'interactive':
+            console.log('interactive');
+            break;
+        case 'complete':
+            console.log('completo');
+            break;
+        default:
+            console.log('default')
+    }
+
     function selectPage() {
         if (pageOption === 'home') {
             setDashboardTitle('Resumo das cobranças')

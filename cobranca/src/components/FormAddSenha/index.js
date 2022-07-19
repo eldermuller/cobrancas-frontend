@@ -1,27 +1,28 @@
 import { useEffect, useState } from 'react';
 import eyeClose from '../../assets/closed_eye.svg';
 import eyeOpen from '../../assets/open_eye.svg';
-import backButton from '../../assets/back_btn.svg'
 import useConsumer from '../../hooks/useConsumer';
-import { animated } from 'react-spring'
+import { animated, useTransition } from 'react-spring'
 import './style.css';
 import api from '../../services/api';
-import SignupTab from '../SignupTab'
 
-function FormAddSenha({ handleNext, handlePrevious, signupTinyErrorTransition }) {
+function FormAddSenha({ handleNext, signupTinyErrorTransition }) {
     const [showPassword, setShowPassword] = useState(false);
     const [showPasswordRepeat, setShowPasswordRepeat] = useState(false);
 
     const {
         signupForm, setSignupForm,
+        inputErrorTransition,
         passwordError, setPasswordError,
         passwordConfError, setPasswordConfError,
         clearInputError,
         errorMessage, setErrorMessage,
-        setSignupOk,
         topErrorTransition,
         toLogin
     } = useConsumer()
+
+    const passwordErrorTransition = useTransition(passwordError, inputErrorTransition)
+    const passwordConfErrorTransition = useTransition(passwordConfError, inputErrorTransition)
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -45,18 +46,19 @@ function FormAddSenha({ handleNext, handlePrevious, signupTinyErrorTransition })
         setPasswordError('')
         setPasswordConfError('')
 
-        try {
-            await api.post('/cadastro-usuario', {
-                nome: signupForm.name,
-                email: signupForm.email,
-                senha: signupForm.password
-            });
-            setSignupOk(true)
-            handleNext();
+        // try {
+        //     await api.post('/cadastro-usuario', {
+        //         nome: signupForm.name,
+        //         email: signupForm.email,
+        //         senha: signupForm.password
+        //     });
+        //     setSignupOk(true)
+        //     handleNext();
 
-        } catch (error) {
-            setErrorMessage(error.response.data)
-        }
+        // } catch (error) {
+        //     setErrorMessage(error.response.data)
+        // }
+        handleNext()
 
     }
 
@@ -78,34 +80,14 @@ function FormAddSenha({ handleNext, handlePrevious, signupTinyErrorTransition })
 
     return (
         <div className='container-add-senha'>
-            {topErrorTransition((appear, errorMessage) =>
-                errorMessage &&
-                <animated.span
-                    style={appear}
-                    className='error-message'
-                >
-                    {errorMessage}
-                </animated.span>
 
-            )}
-            {signupTinyErrorTransition((appear, errorMessage) =>
-                errorMessage &&
-                <animated.span
-                    style={appear}
-                    className='tiny-error-message'
-                >
-                    {errorMessage}
-                </animated.span>
-            )
-            }
-            <img className='signup--back-btn' onClick={handlePrevious} src={backButton} alt='back' />
-            <form
+            <animated.form
                 onSubmit={handleSubmit}
             >
-                <h1>Escolha uma senha</h1>
-                <div className='content-password'>
-                    <label htmlFor='input-password'>Senha*</label>
-                    <input
+                <animated.h1>Escolha uma senha</animated.h1>
+                <animated.div className='content-password'>
+                    <animated.label htmlFor='input-password'>Senha*</animated.label>
+                    <animated.input
                         type={showPassword ? 'text' : 'password'}
                         name='password'
                         placeholder='********'
@@ -113,18 +95,19 @@ function FormAddSenha({ handleNext, handlePrevious, signupTinyErrorTransition })
                         onChange={handleChangeForm}
                         style={passwordError ? { borderColor: '#E70000' } : { borderColor: '#d0d5dd' }}
                     />
-                    <img
+                    <animated.img
                         src={showPassword ? eyeOpen : eyeClose}
                         alt='exibir senha'
                         onClick={() => setShowPassword(!showPassword)}
                     />
-                    {passwordError &&
-                        <span className='warning-message'>{passwordError}</span>
-                    }
-                </div>
-                <div className='content-repeat'>
-                    <label htmlFor='input-repeat'>Repetir a senha*</label>
-                    <input
+                    {passwordErrorTransition((styles, passwordError) => (
+                        passwordError &&
+                        <animated.span style={styles} className='warning-message'>{passwordError}</animated.span>
+                    ))}
+                </animated.div>
+                <animated.div className='content-repeat'>
+                    <animated.label htmlFor='input-repeat'>Repetir a senha*</animated.label>
+                    <animated.input
                         type={showPasswordRepeat ? 'text' : 'password'}
                         name='confirmPassword'
                         placeholder='********'
@@ -132,31 +115,31 @@ function FormAddSenha({ handleNext, handlePrevious, signupTinyErrorTransition })
                         onChange={handleChangeForm}
                         style={passwordConfError ? { borderColor: '#E70000' } : { borderColor: '#d0d5dd' }}
                     />
-                    <img
+                    <animated.img
                         src={showPasswordRepeat ? eyeOpen : eyeClose}
                         alt='exibir senha'
                         onClick={() => setShowPasswordRepeat(!showPasswordRepeat)}
                     />
-                    {passwordConfError &&
-                        <span className='warning-message'>{passwordConfError}</span>
-                    }
-                </div>
-                <div className='content-entrar'>
-                    <button
+                    {passwordConfErrorTransition((styles, passwordConfError) => (
+                        passwordConfError &&
+                        <animated.span style={styles} className='warning-message'>{passwordConfError}</animated.span>
+                    ))}
+                </animated.div>
+                <animated.div className='content-entrar'>
+                    <animated.button
                         className='signup-pink-btn'
                     >
                         Entrar
-                    </button>
+                    </animated.button>
 
-                    <div className='content-login'>
-                        Já possui uma conta? Faça seu <span
+                    <animated.div className='content-login'>
+                        Já possui uma conta? Faça seu <animated.span
                             onClick={() => toLogin()}
-                        >Login</span>
+                        >Login</animated.span>
 
-                    </div>
-                </div>
-            </form>
-            <SignupTab />
+                    </animated.div>
+                </animated.div>
+            </animated.form>
         </div >
     )
 }

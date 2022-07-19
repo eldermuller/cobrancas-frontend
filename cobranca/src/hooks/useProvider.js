@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useTransition } from 'react-spring'
+import { easings, useTransition } from 'react-spring'
 import { useNavigate } from 'react-router-dom'
 import HomeData from "../components/HomeData";
 import api from "../services/api";
@@ -9,6 +9,7 @@ import { getItem } from "../utils/storage";
 function useProvider() {
     const token = getItem('token')
     const navigate = useNavigate()
+
     const [homeDataArrays, setHomeDataArrays] = useState(false)
     const [okClientsArray, setOkClientsArray] = useState([])
     const [inDebtClientsArray, setInDebtClientsArray] = useState([])
@@ -67,6 +68,12 @@ function useProvider() {
     const [clientsNotFound, setClientsNotFound] = useState(false)
     const [billingsNotFound, setBillingsNotFound] = useState(false)
 
+    const inputErrorTransition = {
+        from: { opacity: 0 },
+        enter: { opacity: 1 },
+        leave: { opacity: 0 },
+        config: { duration: 1050, easing: easings.easeOutCirc }
+    }
 
     const topErrorTransition = useTransition(errorMessage, {
         from: { right: '0rem', opacity: 0, top: '8rem' },
@@ -243,6 +250,7 @@ function useProvider() {
         activeStep, setActiveStep,
         signupForm, setSignupForm,
         loginForm, setLoginForm,
+        inputErrorTransition,
         nameError, setNameError,
         emailError, setEmailError,
         passwordError, setPasswordError,

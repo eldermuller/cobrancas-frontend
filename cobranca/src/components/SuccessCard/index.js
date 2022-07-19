@@ -1,26 +1,27 @@
 import iconSucess from '../../assets/success_icon.svg';
 import useConsumer from '../../hooks/useConsumer';
-import SignupTab from '../SignupTab';
+import { useTransition, animated, easings } from 'react-spring';
 import './style.css';
 
 
-function SucessCad() {
+function SucessCard() {
     const { toLogin } = useConsumer()
 
-
     return (
-        <div className='container-sucess'>
-            <div className='content-sucess'>
-                <img src={iconSucess} alt='icon' />
-                <h1>Cadastro realizado com sucesso!</h1>
-            </div>
+        <animated.div
+            className='container-sucess'
+        >
+            <animated.div className='content-sucess'>
+                <animated.img src={iconSucess} alt='icon' />
+                <animated.h1>Cadastro realizado com sucesso!</animated.h1>
+            </animated.div>
 
-            <button onClick={() => toLogin()}
+            <animated.button onClick={() => toLogin()}
                 className='signup-pink-btn to-login-btn'
-            >Ir para o Login</button>
-            <SignupTab />
-        </div>
+            >Ir para o Login</animated.button>
+        </animated.div>
+
     )
 }
 
-export default SucessCad;
+export default SucessCard;

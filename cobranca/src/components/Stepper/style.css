@@ -7,6 +7,64 @@
 
 }
 
+.stepper-box-two {
+    display: flex;
+}
+
+.stepper-icons {
+    display: flex;
+    flex-direction: column;
+    margin-right: 2.4rem;
+}
+
+
+.stepper-bar-div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding: 4px;
+    justify-content: center;
+
+}
+
+.stepper-bar-outline {
+    background-color: var(--verde-claro);
+    width: 3px;
+    height: 100%;
+}
+
+.stepper-bar {
+    width: 3px;
+    height: 0%;
+    background-color: var(--verde-medio);
+    transition: all 500ms ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    5% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.stepper-labels {
+    color: var(--verde-medio);
+}
+
+.stepper-contents {
+    margin-bottom: 2.4rem;
+    margin-top: 0.8rem;
+    color: var(--cinza-200)
+}
+
+/* 
 .stepper-step {
     display: flex;
     flex-direction: column;
@@ -108,111 +166,6 @@
 
     .vertical-line {
         display: none
-    }
-
-    .horizontal-line {
-        display: flex;
-    }
-
-    .stepper-icon {
-        width: 2.5rem;
-    }
-
-    .text-box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 100%;
-        padding-right: 2rem;
-    }
-
-    .stepper-label {
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 700;
-        font-size: 1.4rem;
-        color: var(--verde-medio);
-    }
-
-    .stepper-description {
-        font-family: 'Nunito';
-        font-weight: 600;
-        font-size: 1rem;
-        color: var(--cinza-200);
-
-    }
-}
-
-@media (max-width: 600px) and (min-height: 750px) {
-
-    .stepper-box {
-        padding: 0 0 0 5rem
-    }
-
-    .stepper-label {
-        font-size: 1rem;
-        margin-left: -3.5rem;
-    }
-
-    .stepper-description {
-        display: none;
-    }
-}
-
-@media (max-width: 500px) and (max-height: 750px) {}
-
-/*
-@media (max-width: 389px) {
-    .stepper-box {
-        height: 100%;
-        margin: 0;
-        flex-direction: row;
-        padding: 0 0.5rem 0 2rem;
-        transform: scale(1);
-        width: 100%;
-    }
-
-
-    .text-box {
-        padding-right: 0.8rem;
-    }
-
-    .stepper-label {
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 700;
-        font-size: 1rem;
-        color: var(--verde-medio);
-    }
-
-
-}
-
-@media (max-height: 500px) {
-    .stepper-box {
-        height: 100%;
-    }
-}
-
-@media (max-height: 400px) and (max-width: 700px) {
-    .stepper-box {
-        height: 100%;
-        width: 100%;
-        justify-content: space-between;
-        flex-direction: row;
-        transform: scale(0.9);
-    }
-
-    .stepper-content {
-        flex-direction: column;
-    }
-
-    .icon-box {
-        align-items: center;
-        margin-bottom: 1rem;
-        margin-right: 1rem;
-    }
-
-    .vertical-line {
-        display: none;
     }
 
     .horizontal-line {

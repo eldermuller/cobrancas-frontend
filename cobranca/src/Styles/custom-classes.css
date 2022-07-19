@@ -1,3 +1,64 @@
+.title-1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+}
+
+.title-2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+.title-3-semibold {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.title-3-bold {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.title-4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.title-100 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+}
+
+.subtitle-1 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.input-global {
+    background: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    height: 44px;
+    width: 368px;
+    padding: 10px 0px 10px 14px;
+    border: 1px solid #D0D5DD;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    border-radius: 8px;
+
+    transition: border-color 2.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.input-global:focus {
+    outline-color: var(--verde-medio);
+}
+
 .general-form {
     display: flex;
     flex-direction: column;
@@ -144,6 +205,7 @@
     font-weight: 400;
     color: var(--letra-erro-modal);
     padding: 4px 40px;
+    z-index: 1;
 }
 
 
@@ -154,7 +216,7 @@
     font-family: 'Inter', sans-serif;
     font-size: 1.4rem;
     font-weight: 400;
-    color: var(--letra-erro)
+    color: var(--letra-erro);
 }
 
 .modal-warning-message {
@@ -165,43 +227,9 @@
 .warning-message {
     bottom: -1.8rem;
     left: 0.3rem;
+
 }
 
-.title-1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.6rem;
-    font-weight: 600;
-}
-
-.title-2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.4rem;
-    font-weight: 700;
-}
-
-.title-3-semibold {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 600;
-}
-
-.title-3-bold {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-}
-
-.title-4 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.6rem;
-    font-weight: 700;
-}
-
-.title-100 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.6rem;
-    font-weight: 600;
-}
 
 
 .content-tab {
@@ -306,121 +334,4 @@
 .edit-billing-btn:hover,
 .delete-billing-btn:hover {
     transform: scale(1.1);
-}
-
-@media (max-width: 920px) {
-    .warning-message {
-        bottom: -1.8rem;
-        left: 0.3rem;
-    }
-}
-
-@media (max-width: 920px) and (max-height: 1100px) {
-    .tiny-error-message {
-        margin-top: -6rem
-    }
-}
-
-@media (max-height: 1100px) and (min-height: 850px) {
-    .error-message {
-        display: none;
-    }
-
-    .tiny-error-message {
-        display: flex;
-        transform: scale(1.6);
-    }
-}
-
-@media (max-height: 850px) and (max-width: 920px) {
-    .tiny-error-message {
-        display: none;
-    }
-
-    .error-message {
-        display: flex;
-        transform: scale(0.8);
-
-        margin-top: -6rem;
-        margin-right: -2.5rem;
-    }
-}
-
-@media (max-width: 600px) and (min-height: 750px) {
-    .error-message {
-        display: none;
-    }
-
-    .tiny-error-message {
-        display: flex;
-        transform: scale(1.6);
-    }
-
-    .warning-message {
-        font-size: 1.1rem;
-        left: 0.4rem;
-    }
-}
-
-
-@media (max-width: 600px) and (max-height: 750px) {
-    .error-message {
-        display: none;
-    }
-
-    .tiny-error-message {
-        display: flex;
-        transform: scale(1.6);
-    }
-}
-
-@media (max-height: 500px) and (max-width: 760px) {
-    .error-message {
-        margin-right: -4.5rem;
-        padding: 0rem 2rem;
-        height: 4rem;
-    }
-
-    .warning-message {
-        font-size: 1.2rem;
-        margin-left: 0.3rem;
-    }
-}
-
-@media (max-height: 300px) and (max-width: 680px) {
-    .error-message {
-        margin-right: -6.5rem;
-        margin-top: -6rem;
-        padding: 0rem 2rem;
-    }
-
-    .warning-message {
-        font-size: 1.2rem;
-        margin-left: 0.3rem;
-    }
-}
-
-@media (max-width: 389px) {
-    .warning-message {
-        font-size: 1.2rem;
-    }
-
-    .tiny-error-message {
-        transform: scale(1.2);
-    }
-}
-
-@media (max-width: 300px) {
-    .warning-message {
-        font-size: 1rem;
-        margin-left: 0.3rem;
-    }
-
-    .tiny-error-message {
-        transform: scale(1.2);
-    }
-
-    .signup-pink-btn {
-        transform: scale(0.8);
-    }
 }

@@ -1,7 +1,6 @@
 import useConsumer from '../../hooks/useConsumer';
 import api from '../../services/api';
-import SignupTab from '../SignupTab';
-import { animated } from 'react-spring'
+import { animated, useTransition } from 'react-spring'
 import { useEffect } from 'react';
 import './style.css';
 
@@ -13,8 +12,12 @@ function FormAddNameEmail({ handleNext, signupTinyErrorTransition }) {
         emailError, setEmailError,
         clearInputError, toLogin,
         errorMessage, setErrorMessage,
-        topErrorTransition
+        inputErrorTransition,
+        topErrorTransition, activeStep
     } = useConsumer()
+
+    const nameErrorTransition = useTransition(nameError, inputErrorTransition)
+    const emailErrorTransition = useTransition(emailError, inputErrorTransition)
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -54,6 +57,8 @@ function FormAddNameEmail({ handleNext, signupTinyErrorTransition }) {
         setSignupForm({ ...signupForm, [target.name]: target.value });
     }
 
+
+
     useEffect(() => {
 
         if (errorMessage) {
@@ -68,46 +73,29 @@ function FormAddNameEmail({ handleNext, signupTinyErrorTransition }) {
 
     return (
         <div className='container-add-name'>
-            {topErrorTransition((appear, errorMessage) =>
-                errorMessage &&
-                <animated.span
-                    style={appear}
-                    className='error-message signup-error-message'
-                >
-                    {errorMessage}
-                </animated.span>
-
-            )}
-            {signupTinyErrorTransition((appear, errorMessage) =>
-                errorMessage &&
-                <animated.span
-                    style={appear}
-                    className='signup-tiny-error-message'
-                >
-                    {errorMessage}
-                </animated.span>
-            )}
-            <form
+            <animated.form
                 onSubmit={handleSubmit}
             >
                 <h1>Adicione seus dados</h1>
                 <div className='content-name'>
-                    <label htmlFor='input-password'>Nome*</label>
+                    <label>Nome*</label>
                     <input
+                        className='input-name--signup input-global'
                         type='text'
                         name='name'
                         placeholder='Digite seu nome'
                         value={signupForm.name}
                         onChange={handleChangeForm}
-                        style={emailError ? { borderColor: '#E70000' } : { borderColor: '#d0d5dd' }}
+                        style={nameError ? { borderColor: '#E70000' } : { borderColor: '#d0d5dd' }}
                     />
-                    {nameError &&
-                        <span className='warning-message'>{nameError}</span>
-                    }
+                    {nameErrorTransition((styles, nameError) => (
+                        <animated.span style={styles} className='warning-message'>{nameError}</animated.span>
+                    ))}
                 </div>
                 <div className='content-email'>
-                    <label htmlFor='input-repeat'>E-mail*</label>
+                    <label>E-mail*</label>
                     <input
+                        className='input-email--signup input-global'
                         type='text'
                         name='email'
                         placeholder='Digite seu e-mail'
@@ -115,9 +103,11 @@ function FormAddNameEmail({ handleNext, signupTinyErrorTransition }) {
                         onChange={handleChangeForm}
                         style={emailError ? { borderColor: '#E70000' } : { borderColor: '#d0d5dd' }}
                     />
-                    {emailError &&
-                        <span className='warning-message'>{emailError}</span>
-                    }
+                    {emailErrorTransition((styles, emailError) => (
+                        emailError &&
+                        <animated.span style={styles} className='warning-message'>{emailError}</animated.span>
+                    ))}
+
                 </div>
 
                 <div className='content-continue'>
@@ -133,9 +123,8 @@ function FormAddNameEmail({ handleNext, signupTinyErrorTransition }) {
                         >Login</span>
                     </div>
                 </div>
-            </form>
-            <SignupTab />
-        </div>
+            </animated.form >
+        </div >
     )
 }
 
