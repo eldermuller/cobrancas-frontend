@@ -67,9 +67,9 @@ export default function HomeData() {
     return (
         <div className='homedata'>
             <div className='homedata-line-1'>
-                <TotalPaidBillings />
                 <TotalExpiredBillings />
                 <TotalFutureBillings />
+                <TotalPaidBillings />
             </div>
             <div className='homedata-line-2'>
                 <ExpiredBillings />

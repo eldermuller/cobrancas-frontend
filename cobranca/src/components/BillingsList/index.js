@@ -1,24 +1,25 @@
 import './styles.css'
 import BillingRows from '../BillingRows'
 import useConsumer from '../../hooks/useConsumer'
-import { useEffect } from 'react'
+import { useSpring, animated } from 'react-spring'
 
 
 
 export function ExpiredBillings() {
-    const { expiredBillsArray, homeDataArrays } = useConsumer()
+    const { expiredBillsArray, dissolveSpring } = useConsumer()
+    const dissolveLabel = useSpring(dissolveSpring)
 
-    useEffect(() => {
-        return () => {
-        }
-    }, [expiredBillsArray, homeDataArrays])
+    const num = () => {
+        if (expiredBillsArray.length < 10) { return `0${expiredBillsArray.length}` }
+        return expiredBillsArray.length
+    }
 
     return (
-        <div className='billing-list'>
-            <header className='billing-header'>
+        <div style={dissolveLabel} className='billing-list'>
+            <animated.header style={dissolveLabel} className='billing-header'>
                 Cobranças Vencidas
-                <div className='number-of-billings' style={{ backgroundColor: '#ffefef', color: '#971d1d' }}>08</div>
-            </header>
+                <div className='number-of-billings' style={{ backgroundColor: '#ffefef', color: '#971d1d' }}>{num()}</div>
+            </animated.header>
             <BillingRows
                 data={expiredBillsArray}
             />
@@ -28,20 +29,21 @@ export function ExpiredBillings() {
 
 
 export function FutureBillings() {
-    const { futureBillsArray, homeDataArrays } = useConsumer()
+    const { futureBillsArray, dissolveSpring } = useConsumer()
+    const dissolveLabel = useSpring(dissolveSpring)
 
-    useEffect(() => {
+    const num = () => {
+        if (futureBillsArray.length < 10) { return `0${futureBillsArray.length}` }
+        return futureBillsArray.length
+    }
 
-        return () => {
-        }
-    }, [futureBillsArray, homeDataArrays])
 
     return (
         <div className='billing-list'>
-            <header className='billing-header'>
+            <animated.header style={dissolveLabel} className='billing-header'>
                 Cobranças Previstas
-                <div className='number-of-billings' style={{ backgroundColor: '#fcf6dc', color: '#c5a605' }}>05</div>
-            </header>
+                <div className='number-of-billings' style={{ backgroundColor: '#fcf6dc', color: '#c5a605' }}>{num()}</div>
+            </animated.header>
             <BillingRows
                 data={futureBillsArray}
             />
@@ -51,19 +53,20 @@ export function FutureBillings() {
 
 
 export function PaidBillings() {
-    const { paidBillsArray, homeDataArrays } = useConsumer()
+    const { paidBillsArray, dissolveSpring } = useConsumer()
+    const dissolveLabel = useSpring(dissolveSpring)
 
-    useEffect(() => {
+    const num = () => {
+        if (paidBillsArray.length < 10) { return `0${paidBillsArray.length}` }
+        return paidBillsArray.length
+    }
 
-        return () => {
-        }
-    }, [paidBillsArray, homeDataArrays])
     return (
         <div className='billing-list'>
-            <header className='billing-header'>
+            <animated.header style={dissolveLabel} className='billing-header'>
                 Cobranças Pagas
-                <div className='number-of-billings' style={{ backgroundColor: '#eef6f6', color: '#1fa7af' }}>10</div>
-            </header>
+                <div className='number-of-billings' style={{ backgroundColor: '#eef6f6', color: '#1fa7af' }}>{num()}</div>
+            </animated.header>
             <BillingRows
                 data={paidBillsArray}
             />

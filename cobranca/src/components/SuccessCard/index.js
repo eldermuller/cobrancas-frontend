@@ -1,15 +1,17 @@
 import iconSucess from '../../assets/success_icon.svg';
 import useConsumer from '../../hooks/useConsumer';
-import { useTransition, animated, easings } from 'react-spring';
+import { animated, useSpring } from 'react-spring';
 import './style.css';
 
 
 function SucessCard() {
-    const { toLogin } = useConsumer()
+    const { toLogin, dissolveSpring } = useConsumer()
+    const dissolveCard = useSpring(dissolveSpring)
 
     return (
         <animated.div
             className='container-sucess'
+            style={dissolveCard}
         >
             <animated.div className='content-sucess'>
                 <animated.img src={iconSucess} alt='icon' />

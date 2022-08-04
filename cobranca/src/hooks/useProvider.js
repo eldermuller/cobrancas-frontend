@@ -10,6 +10,26 @@ function useProvider() {
     const token = getItem('token')
     const navigate = useNavigate()
 
+    const [activeStep, setActiveStep] = useState(0);
+    const [signupOk, setSignupOk] = useState(false)
+    const [signupForm, setSignupForm] = useState({
+        name: '',
+        email: '',
+        password: '',
+        confirmPassword: ''
+
+    });
+    const [nameError, setNameError] = useState('')
+    const [emailError, setEmailError] = useState('')
+    const [passwordError, setPasswordError] = useState('')
+    const [passwordConfError, setPasswordConfError] = useState('')
+    const [errorMessage, setErrorMessage] = useState('')
+
+    const [loginForm, setLoginForm] = useState({
+        email: '',
+        password: ''
+    })
+
     const [homeDataArrays, setHomeDataArrays] = useState(false)
     const [okClientsArray, setOkClientsArray] = useState([])
     const [inDebtClientsArray, setInDebtClientsArray] = useState([])
@@ -35,26 +55,9 @@ function useProvider() {
     const [isBillingAdded, setIsBillingAdded] = useState(false)
     const [pageOption, setPageOption] = useState('home')
     const [listType, setListType] = useState(0)
-    const [activeStep, setActiveStep] = useState(0);
-    const [signupOk, setSignupOk] = useState(false)
-    const [signupForm, setSignupForm] = useState({
-        name: '',
-        email: '',
-        password: '',
-        confirmPassword: ''
 
-    });
-    const [loginForm, setLoginForm] = useState({
-        email: '',
-        password: ''
-    })
-    const [nameError, setNameError] = useState('')
-    const [emailError, setEmailError] = useState('')
-    const [passwordError, setPasswordError] = useState('')
-    const [passwordConfError, setPasswordConfError] = useState('')
-    const [errorMessage, setErrorMessage] = useState('')
     const [tinyModalMessage, setTinyModalMessage] = useState('')
-    const [negativeTinyModalMessage, setNegativeTinyModalMessage] = useState('Conta cadastrada com sucesso!!!!')
+    const [negativeTinyModalMessage, setNegativeTinyModalMessage] = useState('')
     const [arrayClients, setArrayClients] = useState([])
     const [arrayBillings, setArrayBillings] = useState([])
     const [chargeStatus, setChargeStatus] = useState('Cobrança Pendente')
@@ -67,6 +70,19 @@ function useProvider() {
     const [seeAllJumper, setSeeAllJumper] = useState(false)
     const [clientsNotFound, setClientsNotFound] = useState(false)
     const [billingsNotFound, setBillingsNotFound] = useState(false)
+
+    const dissolveSpring = {
+        to: { transform: 'scale(1)', opacity: 1 },
+        from: { transform: 'scale(0.97)', opacity: 0 },
+        config: { duration: 250 }
+    }
+
+    const dissolveSpringTwo = {
+        to: { opacity: 1 },
+        from: { opacity: 0 },
+        delay: 250,
+        config: { duration: 500 }
+    }
 
     const inputErrorTransition = {
         from: { opacity: 0 },
@@ -291,7 +307,8 @@ function useProvider() {
         isFilterOpen, setIsFilterOpen,
         seeAllJumper, setSeeAllJumper,
         clientsNotFound, setClientsNotFound,
-        billingsNotFound, setBillingsNotFound
+        billingsNotFound, setBillingsNotFound,
+        dissolveSpring, dissolveSpringTwo
     }
 }
 

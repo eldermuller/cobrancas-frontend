@@ -4,7 +4,7 @@ import SucessCard from '../../components/SuccessCard';
 import SignupStepper from '../../components/Stepper';
 import useConsumer from '../../hooks/useConsumer';
 import backButton from '../../assets/back_btn.svg'
-import { useTransition, animated, Spring } from 'react-spring';
+import { useTransition, animated } from 'react-spring';
 import { useNavigate } from 'react-router-dom';
 import './style.css';
 import { useEffect, useState } from 'react';
@@ -20,7 +20,7 @@ function SignUp() {
         errorMessage, setErrorMessage,
         topErrorTransition
     } = useConsumer()
-    // const [loading, setLoading] = useState(true)
+
     const [previousStep, setPreviousStep] = useState(activeStep)
 
     const signupTinyErrorTransition = useTransition(errorMessage, {
@@ -39,22 +39,6 @@ function SignUp() {
     }
 
 
-    // CÓDIGO BASE PARA UM LOADING
-    // switch (document.readyState) {
-    //     case 'loading':
-    //         console.log('loading');
-    //         break;
-    //     case 'interactive':
-    //         console.log('interactive');
-    //         break;
-    //     case 'complete':
-    //         setTimeout(() => {
-    //             setLoading(false)
-    //         }, 4000)
-    //         break;
-    //     default:
-    //         console.log('default')
-    // }
     useEffect(() => {
         if (errorMessage) {
             setTimeout(() => {
@@ -65,6 +49,8 @@ function SignUp() {
         }
         // eslint-disable-next-line
     }, [errorMessage])
+
+
 
     useEffect(() => {
         if (signupOk) {
@@ -113,51 +99,28 @@ function SignUp() {
             </div>
             <div className='content-dados'>
                 {activeStep === 0 &&
-                    <Spring
-                        to={{ transform: 'scale(1)', opacity: 1 }}
-                        from={{ transform: 'scale(0.97)', opacity: 0 }}
-                        delay={0}
-                        config={{ duration: 250 }}>
-                        {style => (
-                            <animated.div style={style} className='signup-carousel'>
-                                <FormAddNameEmail
-                                    handleNext={handleNext}
-                                    signupTinyErrorTransition={signupTinyErrorTransition}
-                                />
-                            </animated.div>
-                        )}
-                    </Spring>
+                    <div
+                        className='signup-carousel'>
+                        <FormAddNameEmail
+                            handleNext={handleNext}
+                            signupTinyErrorTransition={signupTinyErrorTransition}
+                        />
+                    </div>
                 }
                 {activeStep === 1 &&
-                    <Spring
-                        to={{ transform: 'scale(1)', opacity: 1 }}
-                        from={{ transform: 'scale(0.97)', opacity: 0 }}
-                        delay={0}
-                        config={{ duration: 250 }}>
-                        {style => (
-                            <animated.div style={style} className='signup-carousel'>
-                                <FormAddSenha
-                                    handleNext={handleNext}
-                                    handlePrevious={handlePrevious}
-                                    signupTinyErrorTransition={signupTinyErrorTransition}
-                                />
-                            </animated.div>
-                        )}
-                    </Spring>
+                    <div
+                        className='signup-carousel'>
+                        <FormAddSenha
+                            handleNext={handleNext}
+                            handlePrevious={handlePrevious}
+                            signupTinyErrorTransition={signupTinyErrorTransition}
+                        />
+                    </div>
                 }
                 {activeStep === 2 &&
-                    <Spring
-                        from={{ transform: 'scale(1)', opacity: 0 }}
-                        delay={500}
-                        to={{ transform: 'scale(0.97)', opacity: 1 }}
-                        config={{ duration: 250 }}
-                    >
-                        {style => (
-                            <animated.div style={style} className='signup-carousel'>
-                                <SucessCard />
-                            </animated.div>
-                        )}
-                    </Spring>
+                    <div className='signup-carousel' >
+                        <SucessCard />
+                    </div>
                 }
                 <SignupTab previousStep={previousStep} />
             </div>
