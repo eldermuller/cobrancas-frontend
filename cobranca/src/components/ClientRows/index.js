@@ -3,11 +3,20 @@ import NumberFormat from 'react-number-format'
 import { useEffect, useState } from 'react'
 import useConsumer from '../../hooks/useConsumer.js'
 import ClientsData from '../ClientsData'
+import { useSpring, animated } from 'react-spring'
 
 export default function ClientRows({ data }) {
     const [fiveEntries, setFiveEntries] = useState(data)
-    const { homeDataArrays, setArrayClients, setPageOption, setDashboardContainer, setSeeAllJumper } = useConsumer()
+    const { homeDataArrays,
+        setArrayClients,
+        setPageOption,
+        setDashboardContainer,
+        setSeeAllJumper,
+        dissolveSpringTwo
+    } = useConsumer()
     const [emptyCells, setEmptyCells] = useState(null)
+    const dissolveData = useSpring(dissolveSpringTwo)
+
 
     function handleClients() {
         setArrayClients(data)
@@ -40,7 +49,7 @@ export default function ClientRows({ data }) {
         // eslint-disable-next-line
     }, [homeDataArrays])
     return (
-        <>
+        <animated.section style={dissolveData}>
             <div className='client-table-label'>
                 <span className='client-column'>Cliente</span>
                 <span className='client-column'>ID do clie.</span>
@@ -70,6 +79,6 @@ export default function ClientRows({ data }) {
                     Ver todos
                 </button>
             </footer>
-        </>
+        </animated.section>
     )
 }

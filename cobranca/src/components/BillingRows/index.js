@@ -3,11 +3,19 @@ import NumberFormat from 'react-number-format'
 import { useState, useEffect } from 'react'
 import useConsumer from '../../hooks/useConsumer.js'
 import BillingsData from '../BillingsData'
+import { useSpring, animated } from 'react-spring'
 
 export default function BillingRows({ data }) {
     const [fiveEntries, setFiveEntries] = useState([])
-    const { homeDataArrays, setDashboardContainer, setArrayBillings, setPageOption, setSeeAllJumper } = useConsumer()
+    const { homeDataArrays,
+        setDashboardContainer,
+        setArrayBillings,
+        setPageOption,
+        setSeeAllJumper,
+        dissolveSpringTwo
+    } = useConsumer()
     const [emptyCells, setEmptyCells] = useState(null)
+    const dissolveData = useSpring(dissolveSpringTwo)
 
     function handleBillings() {
         setArrayBillings(data)
@@ -41,7 +49,7 @@ export default function BillingRows({ data }) {
     }, [homeDataArrays])
 
     return (
-        <>
+        <animated.section style={dissolveData}>
             <div className='billing-table-label'>
                 <span className='billing-column'>Cliente</span>
                 <span className='billing-column'>ID da cob.</span>
@@ -77,7 +85,7 @@ export default function BillingRows({ data }) {
                     Ver todos
                 </button>
             </footer>
-        </>
+        </animated.section>
     )
 }
 

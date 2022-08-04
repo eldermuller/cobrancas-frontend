@@ -16,7 +16,15 @@ export function TotalPaidBillings() {
             paidBillsArray.forEach((bill) => {
                 sum = sum + bill.valor
             })
-            setLocalTotal(sum)
+
+            let i = 1;
+            const interval = setInterval(summing, 25)
+            function summing() {
+                setLocalTotal(prevLocal => prevLocal + sum / 20);
+                i++;
+
+                if (i > 20) { clearInterval(interval) }
+            }
         }
         // eslint-disable-next-line
     }, [homeDataArrays])
@@ -53,7 +61,14 @@ export function TotalExpiredBillings() {
             expiredBillsArray.forEach((bill) => {
                 sum = sum + bill.valor
             })
-            setLocalTotal(sum)
+            let i = 1;
+            const interval = setInterval(summing, 25)
+            function summing() {
+                setLocalTotal(prevLocal => prevLocal + sum / 20);
+                i++;
+
+                if (i > 20) { clearInterval(interval) }
+            }
         }
         // eslint-disable-next-line
     }, [homeDataArrays])
@@ -89,7 +104,14 @@ export function TotalFutureBillings() {
             futureBillsArray.forEach((bill) => {
                 sum = sum + bill.valor
             })
-            setLocalTotal(sum)
+            let i = 1;
+            const interval = setInterval(summing, 25)
+            function summing() {
+                setLocalTotal(prevLocal => prevLocal + sum / 20);
+                i++;
+
+                if (i > 20) { clearInterval(interval) }
+            }
         }
         // eslint-disable-next-line
     }, [homeDataArrays])

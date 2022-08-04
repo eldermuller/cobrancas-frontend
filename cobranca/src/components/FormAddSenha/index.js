@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import eyeClose from '../../assets/closed_eye.svg';
 import eyeOpen from '../../assets/open_eye.svg';
 import useConsumer from '../../hooks/useConsumer';
-import { animated, useTransition } from 'react-spring'
+import { animated, useSpring, useTransition } from 'react-spring'
 import './style.css';
 import api from '../../services/api';
 
@@ -17,13 +17,13 @@ function FormAddSenha({ handleNext, signupTinyErrorTransition }) {
         passwordConfError, setPasswordConfError,
         clearInputError,
         errorMessage, setErrorMessage,
-        topErrorTransition,
-        toLogin
+        setSignupOk,
+        toLogin, dissolveSpring
     } = useConsumer()
 
     const passwordErrorTransition = useTransition(passwordError, inputErrorTransition)
     const passwordConfErrorTransition = useTransition(passwordConfError, inputErrorTransition)
-
+    const dissolveCard = useSpring(dissolveSpring)
     async function handleSubmit(e) {
         e.preventDefault();
         let formOk = true
@@ -46,19 +46,18 @@ function FormAddSenha({ handleNext, signupTinyErrorTransition }) {
         setPasswordError('')
         setPasswordConfError('')
 
-        // try {
-        //     await api.post('/cadastro-usuario', {
-        //         nome: signupForm.name,
-        //         email: signupForm.email,
-        //         senha: signupForm.password
-        //     });
-        //     setSignupOk(true)
-        //     handleNext();
+        try {
+            await api.post('/cadastro-usuario', {
+                nome: signupForm.name,
+                email: signupForm.email,
+                senha: signupForm.password
+            });
+            setSignupOk(true)
+            handleNext();
 
-        // } catch (error) {
-        //     setErrorMessage(error.response.data)
-        // }
-        handleNext()
+        } catch (error) {
+            setErrorMessage(error.response.data)
+        }
 
     }
 
@@ -79,7 +78,7 @@ function FormAddSenha({ handleNext, signupTinyErrorTransition }) {
     }, [errorMessage])
 
     return (
-        <div className='container-add-senha'>
+        <animated.div style={dissolveCard} className='container-add-senha'>
 
             <animated.form
                 onSubmit={handleSubmit}
@@ -140,7 +139,7 @@ function FormAddSenha({ handleNext, signupTinyErrorTransition }) {
                     </animated.div>
                 </animated.div>
             </animated.form>
-        </div >
+        </animated.div >
     )
 }
 

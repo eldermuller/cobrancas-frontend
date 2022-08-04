@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { animated, useTransition } from 'react-spring'
+import { animated, useSpring, useTransition } from 'react-spring'
 import eyeClose from '../../assets/closed_eye.svg';
 import eyeOpen from '../../assets/open_eye.svg';
 import useConsumer from '../../hooks/useConsumer';
@@ -25,11 +25,13 @@ function FormLogin() {
         topErrorTransition,
         setActiveStep,
         setSignupForm,
-        setDashboardContainer
+        setDashboardContainer,
+        dissolveSpring
     } = useConsumer()
 
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
+    const dissolveCard = useSpring(dissolveSpring)
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -121,7 +123,8 @@ function FormLogin() {
                     {errorMessage}
                 </animated.span>
             )}
-            <form
+            <animated.form
+                style={dissolveCard}
                 onSubmit={handleSubmit}
             >
                 <h1>Faça seu login!</h1>
@@ -175,7 +178,7 @@ function FormLogin() {
                         </span>
                     </div>
                 </div>
-            </form>
+            </animated.form>
         </div >
     )
 }

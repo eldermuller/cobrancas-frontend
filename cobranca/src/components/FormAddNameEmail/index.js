@@ -1,6 +1,6 @@
 import useConsumer from '../../hooks/useConsumer';
 import api from '../../services/api';
-import { animated, useTransition } from 'react-spring'
+import { animated, useSpring, useTransition } from 'react-spring'
 import { useEffect } from 'react';
 import './style.css';
 
@@ -12,12 +12,12 @@ function FormAddNameEmail({ handleNext, signupTinyErrorTransition }) {
         emailError, setEmailError,
         clearInputError, toLogin,
         errorMessage, setErrorMessage,
-        inputErrorTransition,
-        topErrorTransition, activeStep
+        inputErrorTransition, dissolveSpring
     } = useConsumer()
 
     const nameErrorTransition = useTransition(nameError, inputErrorTransition)
     const emailErrorTransition = useTransition(emailError, inputErrorTransition)
+    const dissolveCard = useSpring(dissolveSpring)
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -39,11 +39,12 @@ function FormAddNameEmail({ handleNext, signupTinyErrorTransition }) {
         setEmailError('')
 
         try {
-            await api.post('/validar-email', {
+            const response = await api.post('/validar-email', {
                 nome: signupForm.name,
                 email: signupForm.email
             })
 
+            console.log(response);
             handleNext();
         } catch (error) {
             return setErrorMessage(error.response.data)
@@ -72,7 +73,7 @@ function FormAddNameEmail({ handleNext, signupTinyErrorTransition }) {
     }, [errorMessage])
 
     return (
-        <div className='container-add-name'>
+        <animated.div style={dissolveCard} className='container-add-name'>
             <animated.form
                 onSubmit={handleSubmit}
             >
@@ -124,7 +125,7 @@ function FormAddNameEmail({ handleNext, signupTinyErrorTransition }) {
                     </div>
                 </div>
             </animated.form >
-        </div >
+        </animated.div >
     )
 }
 
