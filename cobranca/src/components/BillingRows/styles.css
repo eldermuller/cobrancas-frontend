@@ -6,7 +6,7 @@
 .billing-row {
     width: 100%;
     display: grid;
-    grid-template-columns: 10fr 7fr 8fr;
+    grid-template-columns: 9fr 7fr 8fr;
     align-items: center;
     justify-content: space-between;
     padding: 0 0rem 0 4rem;

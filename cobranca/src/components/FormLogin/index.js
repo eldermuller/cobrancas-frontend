@@ -21,7 +21,8 @@ function FormLogin() {
         passwordError, setPasswordError,
         clearInputError,
         errorMessage, setErrorMessage,
-        user, setUser,
+        token, setToken,
+        userName, setUserName,
         topErrorTransition,
         setActiveStep,
         setSignupForm,
@@ -55,15 +56,13 @@ function FormLogin() {
                 senha: loginForm.password
             });
 
-            setUser({
-                ...user,
-                name: response.data.user,
-                email: loginForm.email
-            })
+
             setLoginForm(defaultForm);
+            setToken(response.data.token)
+            setUserName(response.data.user)
+
+
             setDashboardContainer(<HomeData />)
-            setItem('token', response.data.token);
-            setItem('userName', response.data.user)
             navigate('/home');
 
         } catch (error) {

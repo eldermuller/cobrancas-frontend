@@ -5,7 +5,6 @@ import { ClientsOk, ClientsInDebt } from '../ClientStatusLists'
 import { useEffect } from 'react'
 import useConsumer from '../../hooks/useConsumer'
 import api from '../../services/api'
-import { getItem } from '../../utils/storage'
 import { animated } from 'react-spring'
 import positiveFeedback from '../../assets/positive_feedback.svg'
 import closeFeedbackOk from '../../assets/close_feedback_ok.svg'
@@ -19,9 +18,10 @@ export default function HomeData() {
         setPaidBillsArray,
         setFutureBillsArray,
         homeDataArrays, setHomeDataArrays,
-        bottomTinyModal, setTinyModalMessage, tinyModalMessage
+        bottomTinyModal, setTinyModalMessage, tinyModalMessage,
+        token
     } = useConsumer()
-    const token = getItem('token')
+
 
     async function fetchHomeData() {
 

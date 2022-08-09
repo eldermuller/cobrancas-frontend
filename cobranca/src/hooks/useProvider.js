@@ -3,12 +3,15 @@ import { easings, useTransition } from 'react-spring'
 import { useNavigate } from 'react-router-dom'
 import HomeData from "../components/HomeData";
 import api from "../services/api";
-import { getItem } from "../utils/storage";
+import { useLocalStorage } from 'react-use'
 
 
 function useProvider() {
-    const token = getItem('token')
+    // const token = getItem('token')
     const navigate = useNavigate()
+
+    const [token, setToken, clearToken] = useLocalStorage('token')
+    const [userName, setUserName, clearUserName] = useLocalStorage('userName')
 
     const [activeStep, setActiveStep] = useState(0);
     const [signupOk, setSignupOk] = useState(false)
@@ -42,13 +45,7 @@ function useProvider() {
     const [isCpfOk, setIsCpfOk] = useState(true)
     const [isNewClient, setIsNewClient] = useState(true)
     const [modalType, setModalType] = useState('')
-    const [user, setUser] = useState({
-        name: '',
-        email: '',
-        password: '',
-        cpf: '',
-        phone: ''
-    })
+
     const [dashboardContainer, setDashboardContainer] = useState(<HomeData />)
     const [isClientAdded, setIsClientAdded] = useState(false)
     const [currentClient, setCurrentClient] = useState({})
@@ -258,8 +255,9 @@ function useProvider() {
     }
 
     return {
+        token, setToken, clearToken,
+        userName, setUserName, clearUserName,
         modalType, setModalType,
-        user, setUser,
         isClientAdded, setIsClientAdded,
         pageOption, setPageOption,
         listType, setListType,

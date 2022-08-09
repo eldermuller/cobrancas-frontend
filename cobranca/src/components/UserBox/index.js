@@ -7,15 +7,17 @@ import editIcon from '../../assets/edit_icon.svg'
 import exitIcon from '../../assets/exit_icon.svg'
 import useConsumer from '../../hooks/useConsumer'
 import FormUpdateUser from '../FormUpdateUser'
-import { getItem, removeItem } from '../../utils/storage'
 
 export default function UserBox() {
     const navigate = useNavigate()
     const [firstName, setFirstName] = useState('')
     const [initials, setInitials] = useState('')
     const [isOptionsOpen, setIsOptionsOpen] = useState(false)
-    const { pageOption, modalType, setModalType, user } = useConsumer()
-    const userName = getItem('userName')
+    const { pageOption,
+        modalType, setModalType,
+        clearToken,
+        userName } = useConsumer()
+
 
     function getInitials(name) {
         const nameArray = name.trim().split(' ')
@@ -26,7 +28,7 @@ export default function UserBox() {
     }
 
     function handleLogout() {
-        removeItem('token')
+        clearToken()
         navigate('/')
     }
 
@@ -34,7 +36,7 @@ export default function UserBox() {
         setIsOptionsOpen(false)
         getInitials(userName)
         // eslint-disable-next-line
-    }, [pageOption, modalType, user])
+    }, [pageOption, modalType, userName])
 
     return (
         <div className='userbox'>
